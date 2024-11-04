@@ -6,6 +6,8 @@ import {
   UserButton,
   useUser,
 } from "@clerk/nextjs";
+import { Button } from "./ui/button";
+import { LogIn } from "lucide-react";
 
 const Header = () => {
   const { user } = useUser();
@@ -21,7 +23,13 @@ const Header = () => {
             </h1>
           )}
           <SignedOut>
-            <SignInButton />
+            <div></div>
+            <SignInButton>
+              <Button>
+                <LogIn />
+                Giriş Yap
+              </Button>
+            </SignInButton>
           </SignedOut>
           <SignedIn>
             <UserButton />
