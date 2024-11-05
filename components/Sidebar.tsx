@@ -1,21 +1,39 @@
 import NewDocumentButton from "./NewDocumentButton";
-
+import { Menu } from "lucide-react";
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Sidebar = () => {
+  const menuOptions = (
+    <>
+      <div className="flex flex-col gap-4">
+        <NewDocumentButton />
+      </div>
+    </>
+  );
+
   return (
     <>
-      <div className="ml-6 min-w-80 border-r">
-        <NewDocumentButton />
+      <div className="border-r relative pl-6 pr-4">
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger>
+              <Menu />
+            </SheetTrigger>
+            <SheetContent side={"left"}>
+              <SheetHeader>
+                <SheetTitle>Seçenekler</SheetTitle>
+              </SheetHeader>
+              <div className="mt-6">{menuOptions}</div>
+            </SheetContent>
+          </Sheet>
+        </div>
+        <div className="hidden md:inline">{menuOptions}</div>
       </div>
     </>
   );

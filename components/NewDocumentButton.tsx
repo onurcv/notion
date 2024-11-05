@@ -3,7 +3,7 @@ import { CirclePlus } from "lucide-react";
 
 function NewDocumentButton() {
   return (
-    <Button className="w-[94%]">
+    <Button className="w-[100%]">
       <CirclePlus />
       Yeni Çalışma Sayfası
     </Button>

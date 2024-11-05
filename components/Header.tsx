@@ -18,8 +18,8 @@ const Header = () => {
         <div className="pl-2 pr-1 py-6 flex justify-between border-b ml-4">
           {user && (
             <h1 className="text-2xl">
-              {user.firstName?.length ? user?.firstName : "User"}
-              {` Kullanıcısının`} Çalışma Alanı
+              <b>{user.firstName?.length ? user?.firstName : "User"}</b> Çalışma
+              Alanı
             </h1>
           )}
           <SignedOut>

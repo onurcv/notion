@@ -26,9 +26,9 @@ export default function RootLayout({
       <body>
         <ClerkProvider localization={trTR}>
           <Header />
-          <div className="flex mt-4 min-h-screen">
+          <div className="flex mt-6 min-h-screen">
             <Sidebar />
-            <div className="flex-1 overflow-y-auto scrollbar-hide rounded-md">
+            <div className="flex-1 overflow-y-auto scrollbar-hide">
               {children}
             </div>
           </div>
