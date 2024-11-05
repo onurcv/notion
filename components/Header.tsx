@@ -15,11 +15,11 @@ const Header = () => {
   return (
     <html lang="en">
       <body>
-        <div className="p-6 flex justify-between shadow-md">
+        <div className="pl-2 pr-1 py-6 flex justify-between border-b ml-4">
           {user && (
             <h1 className="text-2xl">
               {user.firstName?.length ? user?.firstName : "User"}
-              {`'s`} Space
+              {` Kullanıcısının`} Çalışma Alanı
             </h1>
           )}
           <SignedOut>

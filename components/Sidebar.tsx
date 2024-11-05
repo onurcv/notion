@@ -14,8 +14,7 @@ import {
 const Sidebar = () => {
   return (
     <>
-    
-      <div className="ml-6 min-w-80">
+      <div className="ml-6 min-w-80 border-r">
         <NewDocumentButton />
       </div>
     </>

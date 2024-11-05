@@ -5,30 +5,32 @@ import Header from "../components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import Sidebar from "@/components/Sidebar";
 import { useEffect, useState } from "react";
+import { trTR } from "@clerk/localizations";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Hydration hatasını önlemek için bir `isClient` durumu ekliyoruz.
+  
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Bu sadece istemci tarafında çalışacak.
     setIsClient(true);
   }, []);
 
-  if (!isClient) return null; // Sunucu tarafında boş render eder.
+  if (!isClient) return null;
 
   return (
     <html lang="en">
       <body>
-        <ClerkProvider>
+        <ClerkProvider localization={trTR}>
           <Header />
           <div className="flex mt-4 min-h-screen">
             <Sidebar />
-            <div className="flex-1 bg-gray-100 overflow-y-auto scrollbar-hide rounded-xl">{children}</div>
+            <div className="flex-1 overflow-y-auto scrollbar-hide rounded-md">
+              {children}
+            </div>
           </div>
         </ClerkProvider>
       </body>
