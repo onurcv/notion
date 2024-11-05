@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "../components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import Sidebar from "@/components/Sidebar";
-import Content from "@/components/Content";
 import { useEffect, useState } from "react";
 
 export default function RootLayout({
@@ -27,10 +26,9 @@ export default function RootLayout({
       <body>
         <ClerkProvider>
           <Header />
-          <div className="flex mt-4 pl-2">
+          <div className="flex mt-4 min-h-screen">
             <Sidebar />
-            <Content />
-            {children}
+            <div className="flex-1 bg-gray-100 overflow-y-auto scrollbar-hide rounded-xl">{children}</div>
           </div>
         </ClerkProvider>
       </body>
